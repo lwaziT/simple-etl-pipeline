@@ -17,6 +17,7 @@ def transform(data):
 
     df = df.replace(['FMLE'],['Female'])
     df = df.replace(['MLE'],['Male'])
+    df = df.replace(['BTSX'], ['Both sexes'])
 
     df = df.rename(columns={'Suicide Rate % change since 2010':'Suicide Rate % (2010-Present)',})
     df = df.rename(columns={'Twitter user count % change since 2010':'Twitter usage % (2010-Present)',})
@@ -26,9 +27,11 @@ def transform(data):
 
 def load(data):
     df = pd.DataFrame(data)
-    disk_engine = create_engine('sqlite:///social-media-impact-on-suicide-rates-transformed.db')
+    disk_engine = create_engine('sqlite:///C:/Users/tobos/Desktop/Simple-ETL-Pipeline/datasets/social-media-impact-on-suicide-rates-transformed.db')
     df.to_sql('cal_uni', disk_engine, if_exists='replace', index=False)
 
-
+data = extract()
+df = transform(data)
+load(df)
 
 
