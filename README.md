@@ -1,5 +1,6 @@
 ﻿### Simple ETL pipeline
  
+<<<<<<< HEAD
 ## Overview
 Simple ETL pipeline features three functions, Extract(E), Transform(T) and Load(L), to read data from a local CSV file and load transformed data to SQLite database.
 
@@ -13,3 +14,6 @@ Simple ETL pipeline features three functions, Extract(E), Transform(T) and Load(
 
 ## Future Improvements
 - Push to the cloud.
+=======
+The pipeline features three functions Extract(E) Transform(T) and Load(L), to read data from a CSV file, and transform the data to sqlite db.
+>>>>>>> d9411a4e990edc1ad459b0b212d67995d5b6a68a
